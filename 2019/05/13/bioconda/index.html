@@ -697,8 +697,8 @@ conda activate pa2
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/09/cut_and_tag/" rel="next" title="PaperReading CUT&TAG">
-                <i class="fa fa-chevron-left"></i> PaperReading CUT&TAG
+              <a href="/2019/05/09/mESC_AID_CTCF_2017_BenoitBruneau/" rel="next" title="PaperReading mESC CTCF AID">
+                <i class="fa fa-chevron-left"></i> PaperReading mESC CTCF AID
               </a>
             
           </div>
@@ -1241,6 +1241,38 @@ if ($('body').find('div.pdf').length) {
   
 
   
+<script>
+  $('.highlight').not('.gist .highlight').each(function(i, e) {
+    var $wrap = $('<div>').addClass('highlight-wrap');
+    $(e).after($wrap);
+    $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function(e) {
+      var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+        return $(e).text();
+      }).toArray().join('\n');
+      var ta = document.createElement('textarea');
+      var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+      ta.style.top = yPosition + 'px'; // Prevent page scroll
+      ta.style.position = 'absolute';
+      ta.style.opacity = '0';
+      ta.readOnly = true;
+      ta.value = code;
+      document.body.appendChild(ta);
+      ta.select();
+      ta.setSelectionRange(0, code.length);
+      ta.readOnly = false;
+      var result = document.execCommand('copy');
+      
+      ta.blur(); // For iOS
+      $(this).blur();
+    })).on('mouseleave', function(e) {
+      var $b = $(this).find('.copy-btn');
+      setTimeout(function() {
+        $b.text('Copy');
+      }, 300);
+    }).append(e);
+  })
+</script>
+
 
   
 
