@@ -475,24 +475,13 @@
             
                 <span class="post-meta-item-text">Comments: </span>
                 <a href="/2019/06/01/10-autoencoder-dimension-reduction/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/01/10-autoencoder-dimension-reduction/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/01/10-autoencoder-dimension-reduction/" itemprop="commentCount"></span>
                 </a>
               </span>
             
           
 
           
-          
-            <span id="/2019/06/01/10-autoencoder-dimension-reduction/" class="leancloud_visitors" data-flag-title="PaperReading autoencoder降维">
-              <span class="post-meta-divider">|</span>
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Views: </span>
-              
-                <span class="leancloud-visitors-count"></span>
-            </span>
           
 
           
@@ -693,6 +682,10 @@
 
   
     <div class="comments" id="comments">
+      
+        <div onclick="showGitment()" id="gitment-display-button">Show comments from Gitment</div>
+        <div id="gitment-container" style="display: none"></div>
+      
     </div>
 
   
@@ -1013,37 +1006,45 @@
   
 
   
+
+
   
+    <!-- LOCAL: You can save these files to your site and update links -->
 
-<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
+  
+  <script src https: www.wenjunjiang.win js gitment.js></script>
 
-
-
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<link rel="stylesheet" href="https://www.wenjunjiang.win/css/gitment.css">
+<!-- END LOCAL -->
 
 <script>
-  var GUEST = ['nick', 'mail', 'link'];
-  var guest = 'nick,mail,link';
-  guest = guest.split(',').filter(function(item) {
-    return GUEST.indexOf(item) > -1;
-  });
-  new Valine({
-    el: '#comments',
-    verify: false,
-    notify: false,
-    appId: 'V4tmBj2Ywul9vj7ciNQQ8Qg1-gzGzoHsz',
-    appKey: 'uURK1gnxnpoFJXxtNyqmf9gb',
-    placeholder: 'Just go go',
-    avatar: 'mm',
-    meta: guest,
-    pageSize: '10' || 10,
-    visitor: true,
-    lang: 'en' || 'zh-cn'
-  });
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'YaqiangCao',
+      repo: 'gitblogcomments',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '26086546e777e8dc0beee62fe0d99900aa72477f',
+      
+        client_id: '4467e095d417819a837e'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    function showGitment() {
+      document.getElementById('gitment-display-button').style.display = 'none';
+      document.getElementById('gitment-container').style.display = 'block';
+      renderGitment();
+    }
+  
 </script>
-
-
-
 
   
 
