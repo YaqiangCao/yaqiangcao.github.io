@@ -100,13 +100,21 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="知行斋">
-<meta property="og:url" content="http://yoursite.com/tags/ChromatinStructure/index.html">
+  <meta name="description" content="why read them最近在搞单细胞数据，试了一下多个tSNE的参数，感觉效果不好，刚好看到了UMAP，随手试了一下，发现这个算法太强大了。  在single cell RNA-seq上的power偶尔看到了这篇文章[^1]的图1， 才感觉到了UMAP的强大，虽然不太理解为啥这篇文章宣传了一波UMAP在scRNA-seq里强大就能发Nature Biotechnology了，按这个逻辑，准备">
+<meta name="keywords" content="Python,algorithm,APaperANote,SingleCell">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PaperReading UMAP降维与可视化">
+<meta property="og:url" content="http://yoursite.com/2019/06/27/11-UMAP/index.html">
 <meta property="og:site_name" content="知行斋">
+<meta property="og:description" content="why read them最近在搞单细胞数据，试了一下多个tSNE的参数，感觉效果不好，刚好看到了UMAP，随手试了一下，发现这个算法太强大了。  在single cell RNA-seq上的power偶尔看到了这篇文章[^1]的图1， 才感觉到了UMAP的强大，虽然不太理解为啥这篇文章宣传了一波UMAP在scRNA-seq里强大就能发Nature Biotechnology了，按这个逻辑，准备">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://media.nature.com/lw926/nature-assets/nbt/journal/v37/n1/images/nbt.4314-F1.jpg">
+<meta property="og:image" content="https://github.com/snakers4/playing_with_vae/blob/master/compare.png?raw=true">
+<meta property="og:updated_time" content="2019-06-27T15:22:38.895Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知行斋">
+<meta name="twitter:title" content="PaperReading UMAP降维与可视化">
+<meta name="twitter:description" content="why read them最近在搞单细胞数据，试了一下多个tSNE的参数，感觉效果不好，刚好看到了UMAP，随手试了一下，发现这个算法太强大了。  在single cell RNA-seq上的power偶尔看到了这篇文章[^1]的图1， 才感觉到了UMAP的强大，虽然不太理解为啥这篇文章宣传了一波UMAP在scRNA-seq里强大就能发Nature Biotechnology了，按这个逻辑，准备">
+<meta name="twitter:image" content="https://media.nature.com/lw926/nature-assets/nbt/journal/v37/n1/images/nbt.4314-F1.jpg">
 
 
 
@@ -114,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/ChromatinStructure/">
+  <link rel="canonical" href="http://yoursite.com/2019/06/27/11-UMAP/">
 
 
 
@@ -124,7 +132,7 @@
   };
 </script>
 
-  <title>Tag: ChromatinStructure | 知行斋</title>
+  <title>PaperReading UMAP降维与可视化 | 知行斋</title>
   
 
 
@@ -172,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,7 +256,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -312,28 +320,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -392,57 +378,311 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>ChromatinStructure<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/27/11-UMAP/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yaqiang Cao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/1898537?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行斋">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/05/20/9-Trac-looping/" itemprop="url">
-            
-              <span itemprop="name">PaperReading Trac-looping</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">PaperReading UMAP降维与可视化
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-20T22:33:15-04:00" content="2019-05-20">
-          05-20
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-27 11:19:14 / Modified: 11:22:38" itemprop="dateCreated datePublished" datetime="2019-06-27T11:19:14-04:00">2019-06-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/06/27/11-UMAP/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/06/27/11-UMAP/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="why-read-them"><a href="#why-read-them" class="headerlink" title="why read them"></a>why read them</h2><p>最近在搞单细胞数据，试了一下多个tSNE的参数，感觉效果不好，刚好看到了UMAP，随手试了一下，发现这个算法太强大了。</p>
+<hr>
+<h2 id="在single-cell-RNA-seq上的power"><a href="#在single-cell-RNA-seq上的power" class="headerlink" title="在single cell RNA-seq上的power"></a>在single cell RNA-seq上的power</h2><p>偶尔看到了这篇文章[^1]的图1， 才感觉到了UMAP的强大，虽然不太理解为啥这篇文章宣传了一波UMAP在scRNA-seq里强大就能发Nature Biotechnology了，按这个逻辑，准备好数据，看着arxiv上出啥新embeding 算法就赶紧跑一下。<br><img src="https://media.nature.com/lw926/nature-assets/nbt/journal/v37/n1/images/nbt.4314-F1.jpg" alt>   </p>
+<p>anyway， 贴合生物学知识，人家的结论是:</p>
+<blockquote>
+<p>UMAP better represents the multi-branched continuous trajectory of hematopoietic development</p>
+</blockquote>
+<hr>
+<h2 id="UMAP文章-2"><a href="#UMAP文章-2" class="headerlink" title="UMAP文章 [^2]"></a>UMAP文章 [^2]</h2><p>首先文章回顾历史，觉得降纬可视化算法大致分成两类：<br>1）preserve the distance structure within the data:   PCA, MDS, Sammon mapping<br>2)   preserve the local distance over global distance: t-SNE, Isomap, LargeVis, Laplacian eigenmaps, dissusion maps<br>UMAP算第二类应该。 </p>
+<p>UMAP的数学基础，看不懂。 </p>
+<p>UMAP的计算流程，作者们总结的很简单两步：1）In the first phase a particular weighted k-neighbour graph is constructed. 2）In the second phase a low dimensional layout of this graph is computed. 这个两步给出来的算法细节仔细看看还是能看懂的。</p>
+<p>UMAP的关键参数：1） n, 用来计算local metric的neighbor 数。2）d, 目标降纬纬度。3）min-dist， 目标纬度的邻近点的距离。4) epoch, 训练的epoch数量。 2和4没有太大影响，1和3的影响较大，因而用算法的时候得稍微试试。 </p>
+<p>关于$n$: </p>
+<blockquote>
+<p>Thus n represents some degree of trade-offs between fine grained and large scale manifold features — smaller values will ensure detailed manifold structure is accurately captured (at a loss of the “big picture” view of the manifold), while larger values will capture large scale manifold structures, but at a loss of fine detail structure which will get averaged out in the local approximations. With smaller n values the manifold tends to be broken into many small connected components (care needs to be taken with the spectral embedding for initialization in such cases).  </p>
+</blockquote>
+<p>关于$min-dist$</p>
+<blockquote>
+<p> In essence this determines how closely points can be packed together in the low dimensional representation. Low values on min-dist will result in potentially densely packed regions, but will likely more faithfully represent the manifold structure. Increasing the value of min-dist will force the embedding to spread points out more, assisting visualization (and avoiding potential overplotting issues). We view min-dist as an essentially aesthetic parameter, governing the appearance of the embedding, and thus is more important when using UMAP for visualization.</p>
+</blockquote>
+<hr>
+<h2 id="UMAP实际应用"><a href="#UMAP实际应用" class="headerlink" title="UMAP实际应用"></a>UMAP实际应用</h2><p>一站式Python Package <a href="https://github.com/lmcinnes/umap/" target="_blank" rel="noopener">UMAP</a>, 哪里不会调哪里，基本不用怎么调整参数。<br>看了下例子，应用labeling的那个supervised的有点意思，试了一下，应用labeling能把samples分的特别开，但是值得注意，例如把一半数据用supervised的方法去学习分类，再应用一下另一半看看是否依旧分的很开，如果没有，可能是算法太强带来的过拟合了。  </p>
+<hr>
+<h2 id="额外vs-VAE"><a href="#额外vs-VAE" class="headerlink" title="额外vs. VAE"></a>额外vs. VAE</h2><p>这是看UMAP的documentation时看到的，VAE被UMAP的作者认为可能还比较适合experimental toy 阶段, PCA还是比较被推崇的。<br><img src="https://github.com/snakers4/playing_with_vae/blob/master/compare.png?raw=true" alt></p>
+<ul>
+<li>PCA mostly works for any reasonable dataset on a modern machine. (up to tens or hundreds of millions of rows);</li>
+<li>VAEs have been shown to work only for toy datasets and to our knowledge there was no real life useful application to a real world sized dataset (i.e. ImageNet);</li>
+<li>Applying UMAP to real world tasks usually provides a good starting point for downstream tasks (data visualization, clustering, classification) and works reasonably fast;</li>
+<li>Consider a typical pipeline: high-dimensional embedding (300+) =&gt; PCA to reduce to 50 dimensions =&gt; UMAP to reduce to 10-20 dimensions =&gt; HDBSCAN for clustering / some plain algorithm for classification;</li>
+</ul>
+<hr>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[^1]:  Becht E, McInnes L, Healy J, et al. Dimensionality reduction for visualizing single-cell data using UMAP[J]. Nature biotechnology, 2019, 37(1): 38.</p>
+<p>[^2]:  McInnes, L., Healy, J., Saul, N. &amp; Großberger, L. UMAP: uniform manifold approximation and projection. J. Open Source Softw. 3, 861 (2018).</p>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="Yaqiang Cao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/algorithm/" rel="tag"># algorithm</a>
+          
+            <a href="/tags/APaperANote/" rel="tag"># APaperANote</a>
+          
+            <a href="/tags/SingleCell/" rel="tag"># SingleCell</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+
+<script src="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css">
+
+
+  
+
+
+<div class="likely">
+	
+ 	 	<div class="twitter">Tweet</div>
+	
+ 	 	<div class="facebook">Share</div>
+	
+ 	 	<div class="linkedin">Link</div>
+	
+ 	 	<div class="gplus">Plus</div>
+	
+ 	 	<div class="vkontakte">Share</div>
+	
+ 	 	<div class="odnoklassniki">Class</div>
+	
+ 	 	<div class="telegram">Send</div>
+	
+ 	 	<div class="whatsapp">Send</div>
+	
+ 	 	<div class="pinterest">Pin</div>
+	
+</div>
+
+              </div>
+            
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/01/10-autoencoder-dimension-reduction/" rel="next" title="PaperReading autoencoder降维">
+                <i class="fa fa-chevron-left"></i> PaperReading autoencoder降维
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -462,8 +702,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,6 +835,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-read-them"><span class="nav-number">1.</span> <span class="nav-text">why read them</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在single-cell-RNA-seq上的power"><span class="nav-number">2.</span> <span class="nav-text">在single cell RNA-seq上的power</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UMAP文章-2"><span class="nav-number">3.</span> <span class="nav-text">UMAP文章 [^2]</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UMAP实际应用"><span class="nav-number">4.</span> <span class="nav-text">UMAP实际应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#额外vs-VAE"><span class="nav-number">5.</span> <span class="nav-text">额外vs. VAE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">6.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -714,6 +980,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -729,6 +999,42 @@
 
   
 
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src https: www.wenjunjiang.win js gitment.js></script>
+
+<link rel="stylesheet" href="https://www.wenjunjiang.win/css/gitment.css">
+<!-- END LOCAL -->
+
+<script>
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'YaqiangCao',
+      repo: 'gitblogcomments',
+      
+        lang: 'auto' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '26086546e777e8dc0beee62fe0d99900aa72477f',
+      
+        client_id: '4467e095d417819a837e'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    renderGitment();
+  
+</script>
+
+  
 
 
   
