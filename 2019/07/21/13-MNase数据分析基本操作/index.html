@@ -100,20 +100,21 @@
 
 
 
-  <meta name="description" content="Lai B, Tang Q, Jin W, et al. Trac-looping measures genome structure and chromatin accessibility[J]. Nature methods, 2018, 15(9): 741.   why read it最近要分析这个数据，所以得再好好看一遍有没有之前没有留意的细节。之前在做cLoops的时候直接用了处理好">
-<meta name="keywords" content="APaperANote,Epigenetics,Sequencing,ChromatinStructure">
+  <meta name="description" content="why read it 没分析过， 大致看一下数据预处理流程； 质量控制；  大概画些什么图看看结果；   大概扫一眼参考文献^1][^2][^3][^4]基本会有整体feeling。   数据预处理 mapping一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MA">
+<meta name="keywords" content="APaperANote,NGS,SingleCell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PaperReading Trac-looping">
-<meta property="og:url" content="http://yoursite.com/2019/05/20/9-Trac-looping/index.html">
+<meta property="og:title" content="PaperReading MNase-seq 数据分析">
+<meta property="og:url" content="http://yoursite.com/2019/07/21/13-MNase数据分析基本操作/index.html">
 <meta property="og:site_name" content="知行斋">
-<meta property="og:description" content="Lai B, Tang Q, Jin W, et al. Trac-looping measures genome structure and chromatin accessibility[J]. Nature methods, 2018, 15(9): 741.   why read it最近要分析这个数据，所以得再好好看一遍有没有之前没有留意的细节。之前在做cLoops的时候直接用了处理好">
+<meta property="og:description" content="why read it 没分析过， 大致看一下数据预处理流程； 质量控制；  大概画些什么图看看结果；   大概扫一眼参考文献^1][^2][^3][^4]基本会有整体feeling。   数据预处理 mapping一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MA">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/images/9_trac_1.png">
-<meta property="og:updated_time" content="2019-06-03T15:45:36.106Z">
+<meta property="og:image" content="http://yoursite.com/images/13_MNase_1.png">
+<meta property="og:image" content="http://yoursite.com/images/13_MNase_2.png">
+<meta property="og:updated_time" content="2019-07-21T14:37:05.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PaperReading Trac-looping">
-<meta name="twitter:description" content="Lai B, Tang Q, Jin W, et al. Trac-looping measures genome structure and chromatin accessibility[J]. Nature methods, 2018, 15(9): 741.   why read it最近要分析这个数据，所以得再好好看一遍有没有之前没有留意的细节。之前在做cLoops的时候直接用了处理好">
-<meta name="twitter:image" content="http://yoursite.com/images/9_trac_1.png">
+<meta name="twitter:title" content="PaperReading MNase-seq 数据分析">
+<meta name="twitter:description" content="why read it 没分析过， 大致看一下数据预处理流程； 质量控制；  大概画些什么图看看结果；   大概扫一眼参考文献^1][^2][^3][^4]基本会有整体feeling。   数据预处理 mapping一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MA">
+<meta name="twitter:image" content="http://yoursite.com/images/13_MNase_1.png">
 
 
 
@@ -121,7 +122,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/05/20/9-Trac-looping/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/21/13-MNase数据分析基本操作/">
 
 
 
@@ -131,7 +132,7 @@
   };
 </script>
 
-  <title>PaperReading Trac-looping | 知行斋</title>
+  <title>PaperReading MNase-seq 数据分析 | 知行斋</title>
   
 
 
@@ -395,7 +396,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/20/9-Trac-looping/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/21/13-MNase数据分析基本操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yaqiang Cao">
@@ -412,7 +413,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">PaperReading Trac-looping
+          <h1 class="post-title" itemprop="name headline">PaperReading MNase-seq 数据分析
 
               
             
@@ -438,24 +439,12 @@
                 
               
 
-              <time title="Created: 2019-05-20 22:33:15" itemprop="dateCreated datePublished" datetime="2019-05-20T22:33:15-04:00">2019-05-20</time>
+              <time title="Created: 2019-07-21 10:22:26 / Modified: 10:37:05" itemprop="dateCreated datePublished" datetime="2019-07-21T10:22:26-04:00">2019-07-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-06-03 11:45:36" itemprop="dateModified" datetime="2019-06-03T11:45:36-04:00">2019-06-03</time>
               
             
           </span>
@@ -473,8 +462,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/2019/05/20/9-Trac-looping/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/05/20/9-Trac-looping/" itemprop="commentCount"></span>
+                <a href="/2019/07/21/13-MNase数据分析基本操作/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/07/21/13-MNase数据分析基本操作/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -502,21 +491,27 @@
       
 
       
-        <blockquote>
-<p>Lai B, Tang Q, Jin W, et al. Trac-looping measures genome structure and chromatin accessibility[J]. Nature methods, 2018, 15(9): 741.</p>
-</blockquote>
+        <hr>
+<h2 id="why-read-it"><a href="#why-read-it" class="headerlink" title="why read it"></a>why read it</h2><ol>
+<li>没分析过， 大致看一下数据预处理流程；</li>
+<li>质量控制； </li>
+<li>大概画些什么图看看结果； </li>
+</ol>
+<p>大概扫一眼参考文献^1][^2][^3][^4]基本会有整体feeling。 </p>
 <hr>
-<h2 id="why-read-it"><a href="#why-read-it" class="headerlink" title="why read it"></a>why read it</h2><p>最近要分析这个数据，所以得再好好看一遍有没有之前没有留意的细节。<br>之前在做<a href="https://github.com/YaqiangCao/cLoops" target="_blank" rel="noopener">cLoops</a>的时候直接用了处理好的数据，也没管预处理。<br>plus，cLoops投稿过程中总被问来问去的都是Hi-C分布的结果，Trac-looping好似在我们投稿的时候都没啥问题，一片和谐。。。别逼我。。。。再针对我们对Hi-C的结果搞事情。。。。下面的版本我不支持Hi-C了。。。就只针对Trac-looping, <a href="https://www.biorxiv.org/content/10.1101/638775v1" target="_blank" rel="noopener">Micro-C</a>，<a href="https://www.nature.com/articles/s41586-019-0949-1" target="_blank" rel="noopener">ChIA-Drop</a> 这种又新又fancy又没有那么量大的数据了。。。。<br>Plus，仔细看看到了resting 和 stimulated CD4+ Trac-looping数据，可以愉快用这个开发deLoops了，不管Hi-C了。<br><a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE87254" target="_blank" rel="noopener">处理好的数据集</a>。</p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ol>
+<li><p>mapping<br>一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MAPQ》=10， 虽然我觉得根据<a href="http://biofinysics.blogspot.com/2014/05/how-does-bowtie2-assign-mapq-scores.html" target="_blank" rel="noopener">MAPQ的计算原理</a>，》=1就够了，已经能够保留还可以的比对到转座子上的reads，但是既然大家分析MNase数据的时候，都MAPQ》= 10的话，那就随大流吧。值得注意的是，使用MAPQ》=10的时候，的确会发现不管是bulk还是single cell上的，repeats区域都会存在信号缺失，尤其是有些转座子的确位于TSS区域的时候。  </p>
+</li>
+<li><p>PETs预处理<br>除了经典的去重步骤，比较好的还是得加一步，去掉那些中心位点就差一两个bp的PETs，别问我weishenme，反正去了nuclesome pattern更好。<br>然后可以根据PETs的长度分布看看digestion情况，例如下面这样，参考文献[^2]Supplemental Figure 1b。<br><img src="/images/13_MNase_1.png" alt><br>看看分布，把PETs进一步分成，conical nucleosome (140-180bp) 或者subnucleosome-sized particles (&lt;=80bp)。其实我挺好奇那些80-140 PETs是啥的，其实也挺多的万一实验一个手抖。</p>
+</li>
+<li><p>check nucleosome pattern<br>这个是在多个参考文献中都会看一眼的， 例如下图来自参考文献[^2]Figure 1c的，TSS周边或者CTCF binding sites周边的震荡型。<br>要画这个，把步骤2中得到的PETs，全都压缩到中心点，得到bigWig文件，用deepTools的<a href="https://deeptools.readthedocs.io/en/develop/content/tools/computeMatrix.html" target="_blank" rel="noopener">computeMatrix</a> 设置–binSize=10, 再加稍许一些平滑处理就能得到了。 一般DHS上，也会有类同CTCF这种pattern。需要注意的一点是参考文献的这张图根据图例是用active gene上的TSS画的，似乎好像, pooled scMNase-seq whole genome-wide TSS上的也差不多。<br><img src="/images/13_MNase_2.png" alt></p>
+</li>
+</ol>
 <hr>
-<h2 id="Trac-looping-实验方法"><a href="#Trac-looping-实验方法" class="headerlink" title="Trac-looping 实验方法"></a>Trac-looping 实验方法</h2><p>看看策略图似乎比较简单，实际可能有点复杂，主要得bivalent mosaic end linker设计的好。主要实验优势是<br>不需要chromatin fragmentation and proximity-based ligation</p>
-<hr>
-<h2 id="数据特征"><a href="#数据特征" class="headerlink" title="数据特征"></a>数据特征</h2><p>主要就是一次实验，三层信息量：<br>1）PETs dis &lt; 150, 数据类似ATAC-seq;（这一点在看数据的时候觉得是真像啊）<br>2)  PETs dis &gt; 150, &lt; 1000, nucleosomes级别的互作；（这一点好像阐释比较少，主要就是zig-zag以及solenoid模型预测的nucleosomes和N+2与N+5/6的互作）<br>3） PETs dis &gt; 1000, promoter-enhancer, 跨TAD interactions等；</p>
-<hr>
-<h2 id="分析细节"><a href="#分析细节" class="headerlink" title="分析细节"></a>分析细节</h2><ul>
-<li>关于false positive rates，可以用nuclear 和mitochondrial DNA的分析，即原假设是两个之间没有互作；</li>
-</ul>
-<hr>
-<h2 id="show-一波cLoops的结果"><a href="#show-一波cLoops的结果" class="headerlink" title="show 一波cLoops的结果"></a>show 一波cLoops的结果</h2><p>早在大半年前cLoops的<a href="https://www.biorxiv.org/content/10.1101/465849v1" target="_blank" rel="noopener">pre-print</a>就show了一波和原文方法的比较，目前似乎也没看到有做这个数据的系统性方法, cLoops找到的loops距离更远信号更富集。可以再改进改进也找找比较近的loops并扩展坚定差异loops。<br><img src="/images/9_trac_1.png" alt></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[^1]:  Mueller B, Mieczkowski J, Kundu S, et al. Widespread changes in nucleosome accessibility without changes in nucleosome occupancy during a rapid transcriptional induction[J]. Genes &amp; development, 2017, 31(5): 451-462.  按照关键词MNase-seq genome browser profile随便挑的看browser的文章    </p>
+<p>[^2]:  Zhao Y, Wang J, Liang F, et al. NucMap: a database of genome-wide nucleosome positioning map across species[J]. Nucleic acids research, 2018, 47(D1): D163-D169. 数据库的文章应该包含比较合理靠谱通用的预处理流程</p>
+<p>[^3]: Lai B, Gao W, Cui K, et al. Principles of nucleosome organization revealed by single-cell micrococcal nuclease sequencing[J]. Nature, 2018, 562(7726): 281.  单细胞层面的预处理方法</p>
+<p>[^4]: Ramani V, Qiu R, Shendure J. High Sensitivity Profiling of Chromatin Structure by MNase-SSP[J]. Cell reports, 2019, 26(9): 2465-2476. e4. 随便找的互为参考</p>
 
       
     </div>
@@ -566,11 +561,9 @@
           
             <a href="/tags/APaperANote/" rel="tag"># APaperANote</a>
           
-            <a href="/tags/Epigenetics/" rel="tag"># Epigenetics</a>
+            <a href="/tags/NGS/" rel="tag"># NGS</a>
           
-            <a href="/tags/Sequencing/" rel="tag"># Sequencing</a>
-          
-            <a href="/tags/ChromatinStructure/" rel="tag"># ChromatinStructure</a>
+            <a href="/tags/SingleCell/" rel="tag"># SingleCell</a>
           
         </div>
       
@@ -635,8 +628,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/19/8-Hexo-Next-设置评论和浏览数/" rel="next" title="Hexo Next 设置评论和浏览数">
-                <i class="fa fa-chevron-left"></i> Hexo Next 设置评论和浏览数
+              <a href="/2019/07/20/12-argparse-subcommands/" rel="next" title="argparse 子命令">
+                <i class="fa fa-chevron-left"></i> argparse 子命令
               </a>
             
           </div>
@@ -644,10 +637,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/06/01/10-autoencoder-dimension-reduction/" rel="prev" title="PaperReading autoencoder降维">
-                PaperReading autoencoder降维 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -844,7 +833,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-read-it"><span class="nav-number">1.</span> <span class="nav-text">why read it</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trac-looping-实验方法"><span class="nav-number">2.</span> <span class="nav-text">Trac-looping 实验方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据特征"><span class="nav-number">3.</span> <span class="nav-text">数据特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析细节"><span class="nav-number">4.</span> <span class="nav-text">分析细节</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#show-一波cLoops的结果"><span class="nav-number">5.</span> <span class="nav-text">show 一波cLoops的结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-read-it"><span class="nav-number">1.</span> <span class="nav-text">why read it</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">2.</span> <span class="nav-text">数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文献"><span class="nav-number">3.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
             
 
           </div>
