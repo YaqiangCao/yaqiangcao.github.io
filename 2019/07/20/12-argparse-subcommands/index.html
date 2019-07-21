@@ -100,13 +100,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="知行斋">
-<meta property="og:url" content="http://yoursite.com/tags/dataSource/index.html">
+  <meta name="description" content="why use it在写cLoops2，想要把所有主命令整合到一个命令行帮助里。  需求 主命令里包含一些子命令可使用的参数，例如-p 使用多少个cpu，-v显示版本信息。 每个子命令自带help信息，与主命令help信息不重合。 子命令可包含一些独立的options, 不显示主命令的options. 能解析得到使用的子命令，且如果没有列表中的子命令，报错。   实现话说还是折腾了一阵的，尤其是">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="argparse 子命令">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/12-argparse-subcommands/index.html">
 <meta property="og:site_name" content="知行斋">
+<meta property="og:description" content="why use it在写cLoops2，想要把所有主命令整合到一个命令行帮助里。  需求 主命令里包含一些子命令可使用的参数，例如-p 使用多少个cpu，-v显示版本信息。 每个子命令自带help信息，与主命令help信息不重合。 子命令可包含一些独立的options, 不显示主命令的options. 能解析得到使用的子命令，且如果没有列表中的子命令，报错。   实现话说还是折腾了一阵的，尤其是">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-21T12:32:43.457Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知行斋">
+<meta name="twitter:title" content="argparse 子命令">
+<meta name="twitter:description" content="why use it在写cLoops2，想要把所有主命令整合到一个命令行帮助里。  需求 主命令里包含一些子命令可使用的参数，例如-p 使用多少个cpu，-v显示版本信息。 每个子命令自带help信息，与主命令help信息不重合。 子命令可包含一些独立的options, 不显示主命令的options. 能解析得到使用的子命令，且如果没有列表中的子命令，报错。   实现话说还是折腾了一阵的，尤其是">
 
 
 
@@ -114,7 +119,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/tags/dataSource/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/20/12-argparse-subcommands/">
 
 
 
@@ -124,7 +129,7 @@
   };
 </script>
 
-  <title>Tag: dataSource | 知行斋</title>
+  <title>argparse 子命令 | 知行斋</title>
   
 
 
@@ -172,7 +177,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,7 +253,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -312,28 +317,6 @@
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
   
 
   
@@ -392,57 +375,308 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>dataSource<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/20/12-argparse-subcommands/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yaqiang Cao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="https://avatars1.githubusercontent.com/u/1898537?s=460&v=4">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="知行斋">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/05/14/6-mouse-immune-cis-map/" itemprop="url">
-            
-              <span itemprop="name">PaperReading mouse immune cis map ATAC-seq</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">argparse 子命令
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-14T22:20:34-04:00" content="2019-05-14">
-          05-14
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-20 18:10:12" itemprop="dateCreated datePublished" datetime="2019-07-20T18:10:12-04:00">2019-07-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-21 08:32:43" itemprop="dateModified" datetime="2019-07-21T08:32:43-04:00">2019-07-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/2019/07/20/12-argparse-subcommands/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/07/20/12-argparse-subcommands/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        <hr>
+<h2 id="why-use-it"><a href="#why-use-it" class="headerlink" title="why use it"></a>why use it</h2><p>在写cLoops2，想要把所有主命令整合到一个命令行帮助里。</p>
+<hr>
+<h2 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h2><ol>
+<li>主命令里包含一些子命令可使用的参数，例如-p 使用多少个cpu，-v显示版本信息。</li>
+<li>每个子命令自带help信息，与主命令help信息不重合。</li>
+<li>子命令可包含一些独立的options, 不显示主命令的options.</li>
+<li>能解析得到使用的子命令，且如果没有列表中的子命令，报错。</li>
+</ol>
+<hr>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>话说还是折腾了一阵的，尤其是一开始懵了不知道怎么去check哪个子命令被召唤了，还会有部分主命令与子命令冲突的情况。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">import argparse</span><br><span class="line">from argparse import RawTextHelpFormatter</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def getHelp():</span><br><span class="line">    description=&quot;&quot;&quot;</span><br><span class="line">    Test for balabala.</span><br><span class="line">    Example:</span><br><span class="line">        python3 test.py -h</span><br><span class="line">        python3 test.py a -h</span><br><span class="line">        python3 test.py b -h</span><br><span class="line">    &quot;&quot;&quot;</span><br><span class="line">    EPILOG = &quot;Any bug is welcome reported to caoyaqiang0410@gmail.com&quot;</span><br><span class="line">    parser = argparse.ArgumentParser(description=description,</span><br><span class="line">                                     epilog=EPILOG,</span><br><span class="line">                                     formatter_class=RawTextHelpFormatter,</span><br><span class="line">                                     prog=None,</span><br><span class="line">                                     usage=argparse.SUPPRESS,</span><br><span class="line">                                     )</span><br><span class="line">    #main command options</span><br><span class="line">    parser.add_argument( &quot;-p&quot;, dest=&quot;cpu&quot;, required=False, default=1, type=int, help= &quot;CPU number used to run the job&quot;)</span><br><span class="line">    parser.add_argument( &quot;-v&quot;, dest=&quot;version&quot;, action=&quot;version&quot;, version=&quot;0.0.01&quot;)</span><br><span class="line"></span><br><span class="line">    #subcommands sets</span><br><span class="line">    #subparsers = parser.add_subparsers( help=argparse.SUPPRESS)</span><br><span class="line">    subparsers = parser.add_subparsers( )</span><br><span class="line"></span><br><span class="line">    #sub command a, 更关联主程序参数</span><br><span class="line">    a = subparsers.add_parser( &apos;a&apos;, description=&apos;sub-command a&apos;, usage=argparse.SUPPRESS, parents=[parser], add_help=False)</span><br><span class="line">    a.add_argument( &quot;-a1&quot;, dest=&quot;a1&quot;, required=True, type=str, help= &quot;Sub-command a option a1. &quot;)</span><br><span class="line">    a.add_argument( &quot;-a2&quot;, dest=&quot;a2&quot;, required=True, type=str, help= &quot;Sub-command a option a2. &quot;)</span><br><span class="line">    </span><br><span class="line">    #sub command b, 更独立一些</span><br><span class="line">    b = subparsers.add_parser( &apos;b&apos;, description=&apos;sub-command b&apos;, usage=argparse.SUPPRESS, add_help=True)</span><br><span class="line">    b.add_argument( &quot;-b1&quot;, dest=&quot;b1&quot;, required=True, type=str, help= &quot;Sub-command a option b1. &quot;)</span><br><span class="line">    b.add_argument( &quot;-b2&quot;, dest=&quot;b2&quot;, required=True, type=str, help= &quot;Sub-command a option b2. &quot;)</span><br><span class="line"></span><br><span class="line">    #parse the input</span><br><span class="line">    op = parser.parse_args()</span><br><span class="line">    return op</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">    op = getHelp()</span><br><span class="line">    if len(sys.argv) &gt;= 2:</span><br><span class="line">        if sys.argv[1] == &quot;a&quot;:</span><br><span class="line">            print(&quot;sub-command a called.&quot;)</span><br><span class="line">        if sys.argv[1] == &quot;b&quot;:</span><br><span class="line">            print(&quot;sub-command b called.&quot;)</span><br><span class="line">        print(op)</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="执行"><a href="#执行" class="headerlink" title="执行"></a>执行</h2><ol>
+<li>查看主命令 </li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">$ python3 test.py -h</span><br><span class="line">    Test for balabala.</span><br><span class="line">    Example:</span><br><span class="line">        python3 test.py -h</span><br><span class="line">        python3 test.py a -h</span><br><span class="line">        python3 test.py b -h</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  &#123;a,b&#125;</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line">  -p CPU      CPU number used to run the job</span><br><span class="line">  -v          show program&apos;s version number and exit</span><br><span class="line"></span><br><span class="line">Any bug is welcome reported to caoyaqiang0410@gmail.com</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>查看子命令并执行</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">python3 test.py a -h</span><br><span class="line">sub-command a</span><br><span class="line"></span><br><span class="line">positional arguments:</span><br><span class="line">  &#123;a,b&#125;</span><br><span class="line"></span><br><span class="line">optional arguments:</span><br><span class="line">  -h, --help  show this help message and exit</span><br><span class="line">  -p CPU      CPU number used to run the job</span><br><span class="line">  -v          show program&apos;s version number and exit</span><br><span class="line">  -a1 A1      Sub-command a option a1.</span><br><span class="line">  -a2 A2      Sub-command a option a2.</span><br><span class="line"></span><br><span class="line">$ python3 test.py a -a1 testa -a2 testa2</span><br><span class="line">sub-command a called.</span><br><span class="line">Namespace(a1=&apos;testa&apos;, a2=&apos;testa2&apos;, cpu=1)</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>执行错误命令并报错</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python3 test.py c -h</span><br><span class="line">test.py: error: invalid choice: &apos;c&apos; (choose from &apos;a&apos;, &apos;b&apos;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+      <div>
+        <div id="reward-container">
+  <div></div>
+  <button id="reward-button" disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+
+    
+      
+      
+        
+      
+      <div style="display: inline-block">
+        <img src="/images/wechatpay.jpg" alt="Yaqiang Cao WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+              <div>
+                
+
+<script src="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.css">
+
+
+  
+
+
+<div class="likely">
+	
+ 	 	<div class="twitter">Tweet</div>
+	
+ 	 	<div class="facebook">Share</div>
+	
+ 	 	<div class="linkedin">Link</div>
+	
+ 	 	<div class="gplus">Plus</div>
+	
+ 	 	<div class="vkontakte">Share</div>
+	
+ 	 	<div class="odnoklassniki">Class</div>
+	
+ 	 	<div class="telegram">Send</div>
+	
+ 	 	<div class="whatsapp">Send</div>
+	
+ 	 	<div class="pinterest">Pin</div>
+	
+</div>
+
+              </div>
+            
+            
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/27/11-UMAP/" rel="next" title="PaperReading UMAP降维与可视化">
+                <i class="fa fa-chevron-left"></i> PaperReading UMAP降维与可视化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      
+        <div id="gitment-container"></div>
+      
+    </div>
+
+  
+
+
 
         </div>
         
@@ -462,8 +696,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -586,6 +829,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#why-use-it"><span class="nav-number">1.</span> <span class="nav-text">why use it</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求"><span class="nav-number">2.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行"><span class="nav-number">4.</span> <span class="nav-text">执行</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -714,6 +974,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.1"></script>
+<script src="/js/post-details.js?v=7.1.1"></script>
+
+
 
   
 
@@ -729,6 +993,42 @@
 
   
 
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src https: www.wenjunjiang.win js gitment.js></script>
+
+<link rel="stylesheet" href="https://www.wenjunjiang.win/css/gitment.css">
+<!-- END LOCAL -->
+
+<script>
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'YaqiangCao',
+      repo: 'gitblogcomments',
+      
+        lang: 'auto' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '26086546e777e8dc0beee62fe0d99900aa72477f',
+      
+        client_id: '4467e095d417819a837e'
+      }
+    });
+    gitment.render('gitment-container');
+  }
+
+  
+    renderGitment();
+  
+</script>
+
+  
 
 
   
