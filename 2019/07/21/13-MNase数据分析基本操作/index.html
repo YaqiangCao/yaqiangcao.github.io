@@ -110,7 +110,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/images/13_MNase_1.png">
 <meta property="og:image" content="http://yoursite.com/images/13_MNase_2.png">
-<meta property="og:updated_time" content="2019-07-21T14:37:05.724Z">
+<meta property="og:updated_time" content="2019-09-15T18:15:50.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PaperReading MNase-seq 数据分析">
 <meta name="twitter:description" content="why read it 没分析过， 大致看一下数据预处理流程； 质量控制；  大概画些什么图看看结果；   大概扫一眼参考文献^1][^2][^3][^4]基本会有整体feeling。   数据预处理 mapping一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MA">
@@ -439,12 +439,24 @@
                 
               
 
-              <time title="Created: 2019-07-21 10:22:26 / Modified: 10:37:05" itemprop="dateCreated datePublished" datetime="2019-07-21T10:22:26-04:00">2019-07-21</time>
+              <time title="Created: 2019-07-21 10:22:26" itemprop="dateCreated datePublished" datetime="2019-07-21T10:22:26-04:00">2019-07-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-09-15 14:15:50" itemprop="dateModified" datetime="2019-09-15T14:15:50-04:00">2019-09-15</time>
               
             
           </span>
@@ -502,7 +514,7 @@
 <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ol>
 <li><p>mapping<br>一般是paired-end reads。Bowtie2 –no-mixed –no-discordant 保留比对比较好的PETs。此外似乎大家一般也都会筛选一下bowtie2的MAPQ》=10， 虽然我觉得根据<a href="http://biofinysics.blogspot.com/2014/05/how-does-bowtie2-assign-mapq-scores.html" target="_blank" rel="noopener">MAPQ的计算原理</a>，》=1就够了，已经能够保留还可以的比对到转座子上的reads，但是既然大家分析MNase数据的时候，都MAPQ》= 10的话，那就随大流吧。值得注意的是，使用MAPQ》=10的时候，的确会发现不管是bulk还是single cell上的，repeats区域都会存在信号缺失，尤其是有些转座子的确位于TSS区域的时候。  </p>
 </li>
-<li><p>PETs预处理<br>除了经典的去重步骤，比较好的还是得加一步，去掉那些中心位点就差一两个bp的PETs，别问我weishenme，反正去了nuclesome pattern更好。<br>然后可以根据PETs的长度分布看看digestion情况，例如下面这样，参考文献[^2]Supplemental Figure 1b。<br><img src="/images/13_MNase_1.png" alt><br>看看分布，把PETs进一步分成，conical nucleosome (140-180bp) 或者subnucleosome-sized particles (&lt;=80bp)。其实我挺好奇那些80-140 PETs是啥的，其实也挺多的万一实验一个手抖。</p>
+<li><p>PETs预处理<br>除了经典的去重步骤，比较好的还是得加一步，去掉那些中心位点就差一两个bp的PETs，别问我为什么，反正去了nuclesome pattern更好。<br>然后可以根据PETs的长度分布看看digestion情况，例如下面这样，参考文献[^2]Supplemental Figure 1b。<br><img src="/images/13_MNase_1.png" alt><br>看看分布，把PETs进一步分成，conical nucleosome (140-180bp) 或者subnucleosome-sized particles (&lt;=80bp)。其实我挺好奇那些80-140 PETs是啥的，其实也挺多的万一实验一个手抖。</p>
 </li>
 <li><p>check nucleosome pattern<br>这个是在多个参考文献中都会看一眼的， 例如下图来自参考文献[^2]Figure 1c的，TSS周边或者CTCF binding sites周边的震荡型。<br>要画这个，把步骤2中得到的PETs，全都压缩到中心点，得到bigWig文件，用deepTools的<a href="https://deeptools.readthedocs.io/en/develop/content/tools/computeMatrix.html" target="_blank" rel="noopener">computeMatrix</a> 设置–binSize=10, 再加稍许一些平滑处理就能得到了。 一般DHS上，也会有类同CTCF这种pattern。需要注意的一点是参考文献的这张图根据图例是用active gene上的TSS画的，似乎好像, pooled scMNase-seq whole genome-wide TSS上的也差不多。<br><img src="/images/13_MNase_2.png" alt></p>
 </li>
@@ -718,7 +730,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -777,7 +789,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">20</span>
+                      
+                    
+                    <span class="site-state-item-count">21</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
