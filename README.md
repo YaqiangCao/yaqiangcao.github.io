@@ -1,2 +1,2 @@
 # yaqiangcao.github.io
-This is Yaqiang Cao's Homepage for research CV. 
+Yaqiang Cao's homepage for research CV. 
